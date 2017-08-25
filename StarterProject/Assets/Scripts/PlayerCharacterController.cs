@@ -18,9 +18,6 @@ public class PlayerCharacterController : MonoBehaviour {
 	void Update () {
         float move = Input.GetAxis("Horizontal");
 
-        Animator animatorComponent = this.GetComponent<Animator>();
-        animatorComponent.SetFloat("moveSpeed", Mathf.Abs(move));
-
         Rigidbody2D rigidbody = this.GetComponent<Rigidbody2D>();
         rigidbody.velocity = new Vector2(move * maxSpeed, rigidbody.velocity.y);
 
